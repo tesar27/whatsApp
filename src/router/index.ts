@@ -5,7 +5,19 @@ import Tabs from '../views/Tabs.vue'
 const routes: Array<RouteRecordRaw> = [
   {
     path: '/',
-    redirect: '/tabs/tab1'
+    redirect: '/register'
+  },
+  {
+    path: '/home',
+    component: () => import('@/views/Home.vue')
+  },
+  {
+    path: '/register',
+    component: () => import('@/views/RegisterPage.vue')
+  },
+  {
+    path: '/ver',
+    component: () => import('@/views/VerificationCodePage.vue')
   },
   {
     path: '/tabs/',
@@ -13,19 +25,19 @@ const routes: Array<RouteRecordRaw> = [
     children: [
       {
         path: '',
-        redirect: '/tabs/tab1'
+        redirect: '/tabs/chats'
       },
       {
-        path: 'tab1',
-        component: () => import('@/views/Tab1.vue')
+        path: 'chats',
+        component: () => import('@/views/Chats.vue')
       },
       {
-        path: 'tab2',
-        component: () => import('@/views/Tab2.vue')
+        path: 'statuses',
+        component: () => import('@/views/Statuses.vue')
       },
       {
-        path: 'tab3',
-        component: () => import('@/views/Tab3.vue')
+        path: 'settings',
+        component: () => import('@/views/Settings.vue')
       }
     ]
   }
